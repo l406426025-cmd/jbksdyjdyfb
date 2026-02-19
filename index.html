@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DanFeng 公益代理 - 马年新春特别版</title>
+    <style>
+        /* 全局样式：重置默认边距+居中+淡紫高级背景 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* 淡紫底色，低饱和度更高级 */
+            background-color: #f9f7fd;
+            font-family: "微软雅黑", "Inter", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #4a4a68; /* 深紫灰，保证文字可读性 */
+            letter-spacing: 0.5px; /* 轻微字间距，提升高级感 */
+        }
+        /* 标题区样式：主紫调，更优雅 */
+        .title {
+            font-size: 32px;
+            font-weight: 600; /* 适中加粗，不生硬 */
+            margin-bottom: 12px;
+            color: #7b66d8; /* 主紫色，高级不刺眼 */
+        }
+        /* 节日特别版标语：浅紫强调 */
+        .festival-tag {
+            font-size: 20px;
+            color: #9a86e4; /* 浅紫色，和主色呼应 */
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        /* 核心标语区：提升字体质感 */
+        .slogan {
+            font-size: 24px;
+            margin: 18px 0;
+            text-align: center;
+            font-weight: 500;
+            color: #6b5acd; /* 中紫色，突出核心文案 */
+        }
+        /* 节日祝福语：淡紫灰，不抢戏 */
+        .blessing {
+            font-size: 18px;
+            color: #8c88a8; /* 淡紫灰，柔和高级 */
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+        /* 数据统计区：横向排列，适配手机 */
+        .data-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px; /* 加大间距，更简约透气 */
+            margin-top: 48px;
+        }
+        /* 单个数据样式 */
+        .data-item {
+            text-align: center;
+        }
+        /* 数字样式：主紫调，放大醒目 */
+        .data-num {
+            font-size: 40px;
+            font-weight: 700;
+            color: #7b66d8; /* 主紫色，视觉焦点 */
+            margin-bottom: 8px;
+            transition: transform 0.3s ease; /* 过渡效果更丝滑 */
+        }
+        /* 数字hover动效：轻微放大，提升交互感 */
+        .data-num:hover {
+            transform: scale(1.08); /* 适度放大，不夸张 */
+            color: #6b5acd; /* hover加深，有层次感 */
+        }
+        /* 数字描述：淡紫灰，简约 */
+        .data-desc {
+            font-size: 16px;
+            color: #8c88a8;
+            text-transform: capitalize; /* 首字母大写，细节高级 */
+        }
+        /* 节点提示语：中紫色，层次分明 */
+        .node-tip {
+            font-size: 20px;
+            margin-top: 24px;
+            color: #6b5acd;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+        /* 跟随系统深色模式：淡紫深色主题，保持高级感 */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1a1726; /* 深紫黑，深色高级底 */
+                color: #e2dff7;
+            }
+            .title, .data-num {
+                color: #a795f7; /* 深色模式主紫 */
+            }
+            .data-num:hover {
+                color: #c0b2ff; /* hover浅紫 */
+            }
+            .festival-tag {
+                color: #b4a3f5;
+            }
+            .slogan {
+                color: #9a86e4;
+            }
+            .blessing, .data-desc {
+                color: #c4c0d8;
+            }
+            .node-tip {
+                color: #a795f7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 标题：可改自己的网站名称 -->
+    <div class="title">DanFeng 公益代理</div>
+    <!-- 节日标签：淡紫主题Emoji搭配 -->
+    <div class="festival-tag">💜 马年新春 · 紫韵版 💜</div>
+    <!-- 核心标语：适配淡紫主题 -->
+    <div class="slogan">马到成功 · 紫韵随行 网速飞驰</div>
+    <!-- 节日祝福：柔和文案 -->
+    <div class="blessing">🐎 紫启新程 · 龙马精神 · 万事顺遂 🐎</div>
+    <!-- 节点提示：淡紫主题 -->
+    <div class="node-tip">🚀 紫韵节点 · 全速就绪</div>
+    <div class="node-tip">火马年紫调高速节点已上线，伴你一骑绝尘。</div>
+    <!-- 数据统计区：核心数据 -->
+    <div class="data-box">
+        <div class="data-item">
+            <div class="data-num">26+</div>
+            <div class="data-desc">疾速节点</div>
+        </div>
+        <div class="data-item">
+            <div class="data-num">2.6K+</div>
+            <div class="data-desc">逐风骑士</div>
+        </div>
+        <div class="data-item">
+            <div class="data-num">99.9%</div>
+            <div class="data-desc">稳定在线</div>
+        </div>
+    </div>
+</body>
+</html>
