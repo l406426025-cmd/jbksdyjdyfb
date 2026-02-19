@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DanFeng 公益代理 - 马年新春紫韵版</title>
+    <title>小姬公益代理 - 马年新春紫韵版</title>
     <style>
         /* 全局样式重置+基础配置 */
         * {
@@ -17,31 +17,31 @@
             color: #4a4a68;
             letter-spacing: 0.5px;
             padding: 20px;
-            max-width: 1200px; /* 电脑端最大宽度，避免内容过宽 */
-            margin: 0 auto; /* 页面居中 */
+            max-width: 1200px;
+            margin: 0 auto;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        /* 通用版块样式：每个版块统一间距+内边距 */
+        /* 通用版块样式 */
         .section {
-            width: 100%; /* 占满容器宽度，响应式核心 */
+            width: 100%;
             padding: 20px;
-            margin-bottom: 30px; /* 版块之间的间距 */
-            border-radius: 12px; /* 圆角更柔和 */
-            background-color: #ffffff; /* 白色底突出版块 */
-            box-shadow: 0 2px 12px rgba(123, 102, 216, 0.08); /* 轻微阴影，提升层次感 */
+            margin-bottom: 30px;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 12px rgba(123, 102, 216, 0.08);
         }
 
         /* 1. 顶部标题版块 */
         .header-section {
             text-align: center;
-            border-bottom: 2px solid #f0edfc; /* 底部边框分隔版块 */
+            border-bottom: 2px solid #f0edfc;
         }
         .title {
-            font-size: clamp(24px, 5vw, 36px); /* 响应式字体：手机24px，电脑最大36px */
+            font-size: clamp(24px, 5vw, 36px);
             font-weight: 600;
             color: #7b66d8;
             margin-bottom: 8px;
@@ -68,7 +68,65 @@
             line-height: 1.8;
         }
 
-        /* 3. 数据展示版块 */
+        /* 3. 功能按钮版块 - 新增核心区 */
+        .button-section {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        /* 按钮容器：横向排列，适配手机 */
+        .btn-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: clamp(15px, 3vw, 25px);
+            margin-bottom: 20px;
+        }
+        /* 通用按钮样式 */
+        .action-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: clamp(14px, 2vw, 16px);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        /* 复制按钮样式 */
+        .copy-btn {
+            background-color: #7b66d8;
+            color: #ffffff;
+        }
+        .copy-btn:hover {
+            background-color: #6b5acd;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(123, 102, 216, 0.2);
+        }
+        /* 加群按钮样式 */
+        .group-btn {
+            background-color: #f0edfc;
+            color: #7b66d8;
+            border: 1px solid #e0d9f8;
+        }
+        .group-btn:hover {
+            background-color: #e8e3f9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(123, 102, 216, 0.1);
+        }
+        /* 复制次数展示 */
+        .copy-count {
+            font-size: clamp(14px, 2vw, 16px);
+            color: #8c88a8;
+            margin-top: 15px;
+        }
+        .count-num {
+            color: #7b66d8;
+            font-weight: 700;
+        }
+
+        /* 4. 数据展示版块 */
         .data-section {
             text-align: center;
         }
@@ -80,13 +138,13 @@
         }
         .data-box {
             display: flex;
-            flex-wrap: wrap; /* 手机端自动换行 */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: clamp(20px, 5vw, 50px); /* 响应式间距 */
+            gap: clamp(20px, 5vw, 50px);
         }
         .data-item {
-            flex: 1; /* 电脑端均分宽度 */
-            min-width: 120px; /* 手机端最小宽度，避免挤压 */
+            flex: 1;
+            min-width: 120px;
             padding: 15px;
         }
         .data-num {
@@ -106,14 +164,14 @@
             text-transform: capitalize;
         }
 
-        /* 4. 底部提示版块 */
+        /* 5. 底部提示版块 */
         .footer-section {
             text-align: center;
-            border-top: 2px solid #f0edfc; /* 顶部边框分隔 */
+            border-top: 2px solid #f0edfc;
             color: #a199c0;
             font-size: clamp(12px, 2vw, 14px);
             padding-top: 20px;
-            margin-bottom: 0; /* 最后一个版块取消底部间距 */
+            margin-bottom: 0;
         }
 
         /* 深色模式适配 */
@@ -133,7 +191,7 @@
                 border-top-color: #322b4b;
                 color: #c4c0d8;
             }
-            .title, .data-num {
+            .title, .data-num, .count-num {
                 color: #a795f7;
             }
             .data-num:hover {
@@ -145,12 +203,29 @@
             .slogan, .node-tip {
                 color: #9a86e4;
             }
-            .blessing, .data-desc {
+            .blessing, .data-desc, .copy-count {
                 color: #c4c0d8;
+            }
+            /* 深色模式按钮样式 */
+            .copy-btn {
+                background-color: #8d79e0;
+            }
+            .copy-btn:hover {
+                background-color: #a795f7;
+                box-shadow: 0 4px 12px rgba(167, 149, 247, 0.2);
+            }
+            .group-btn {
+                background-color: #322b4b;
+                color: #a795f7;
+                border-color: #41385c;
+            }
+            .group-btn:hover {
+                background-color: #3b3358;
+                box-shadow: 0 4px 12px rgba(167, 149, 247, 0.1);
             }
         }
 
-        /* 小屏手机适配（可选，细化调整） */
+        /* 小屏手机适配 */
         @media (max-width: 480px) {
             .section {
                 padding: 15px;
@@ -159,13 +234,18 @@
             .data-item {
                 padding: 10px;
             }
+            .action-btn {
+                padding: 10px 20px;
+                width: 100%; /* 手机端按钮全屏宽 */
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
     <!-- 1. 顶部标题版块 -->
     <div class="section header-section">
-        <div class="title">DanFeng 公益代理</div>
+        <div class="title">小姬公益代理</div>
         <div class="festival-tag">💜 马年新春 · 紫韵版 💜</div>
     </div>
 
@@ -175,7 +255,23 @@
         <div class="blessing">🐎 紫启新程 · 龙马精神 · 万事顺遂 🐎</div>
     </div>
 
-    <!-- 3. 数据展示版块 -->
+    <!-- 3. 功能按钮版块 - 新增 -->
+    <div class="section button-section">
+        <div class="btn-box">
+            <!-- 复制按钮 -->
+            <button class="action-btn copy-btn">
+                📋 复制节点链接
+            </button>
+            <!-- 加群按钮 -->
+            <a href="https://t.me/jbksjl" target="_blank" class="action-btn group-btn">
+                📢 加入群聊
+            </a>
+        </div>
+        <!-- 复制次数展示 -->
+        <div class="copy-count">已复制 <span class="count-num" id="copyCount">0</span> 次</div>
+    </div>
+
+    <!-- 4. 数据展示版块 -->
     <div class="section data-section">
         <div class="node-tip">🚀 紫韵节点 · 全速就绪</div>
         <div class="node-tip">火马年紫调高速节点已上线，伴你一骑绝尘。</div>
@@ -195,9 +291,81 @@
         </div>
     </div>
 
-    <!-- 4. 底部提示版块 -->
+    <!-- 5. 底部提示版块 -->
     <div class="section footer-section">
-        © 2026 DanFeng 公益代理 · 紫韵版 | 轻量高效 · 稳定可靠
+        © 2026 小姬公益代理 · 紫韵版 | 轻量高效 · 稳定可靠
     </div>
+
+    <!-- JavaScript 功能实现：复制链接 + 统计次数 -->
+    <script>
+        // 1. 定义要复制的链接
+        const copyLink = "https://gist.githubusercontent.com/l406426025-cmd/bbbb3efb0bd1ed85a72b87f3bce95c49/raw/karing-nodes.txt";
+        
+        // 2. 获取DOM元素
+        const copyBtn = document.querySelector('.copy-btn');
+        const copyCountEl = document.getElementById('copyCount');
+        
+        // 3. 从本地存储读取复制次数（刷新页面不丢失）
+        let copyCount = localStorage.getItem('xiaojiCopyCount') || 0;
+        copyCountEl.textContent = copyCount;
+
+        // 4. 复制功能实现
+        copyBtn.addEventListener('click', async () => {
+            try {
+                // 复制链接到剪贴板
+                await navigator.clipboard.writeText(copyLink);
+                
+                // 提示复制成功（按钮文字临时变化）
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = "✅ 复制成功";
+                copyBtn.style.backgroundColor = "#4CAF50";
+                
+                // 更新复制次数并保存到本地存储
+                copyCount++;
+                copyCountEl.textContent = copyCount;
+                localStorage.setItem('xiaojiCopyCount', copyCount);
+                
+                // 2秒后恢复按钮原始状态
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                    // 恢复原配色（区分深色/浅色模式）
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        copyBtn.style.backgroundColor = "#8d79e0";
+                    } else {
+                        copyBtn.style.backgroundColor = "#7b66d8";
+                    }
+                }, 2000);
+                
+            } catch (err) {
+                // 复制失败的备用方案（创建临时输入框复制）
+                const tempInput = document.createElement('input');
+                tempInput.value = copyLink;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                
+                // 提示复制成功
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = "✅ 复制成功";
+                copyBtn.style.backgroundColor = "#4CAF50";
+                
+                // 更新次数
+                copyCount++;
+                copyCountEl.textContent = copyCount;
+                localStorage.setItem('xiaojiCopyCount', copyCount);
+                
+                // 恢复按钮状态
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        copyBtn.style.backgroundColor = "#8d79e0";
+                    } else {
+                        copyBtn.style.backgroundColor = "#7b66d8";
+                    }
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html>
