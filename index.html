@@ -157,8 +157,10 @@
         }
         .data-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .data-item {
             padding: 25px 15px;
@@ -271,12 +273,6 @@
             body {
                 padding: 15px;
             }
-            .data-grid {
-                gap: 15px;
-            }
-            .data-item {
-                padding: 15px 10px;
-            }
         }
     </style>
 </head>
@@ -332,6 +328,10 @@
             <div class="data-item">
                 <div class="data-num">99.9%</div>
                 <div class="data-desc">服务可用性</div>
+            </div>
+            <div class="data-item">
+                <div class="data-num">0</div>
+                <div class="data-desc">永久免费使用</div>
             </div>
         </div>
     </div>
