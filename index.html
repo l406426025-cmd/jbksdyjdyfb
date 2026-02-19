@@ -3,148 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DanFeng 公益代理 - 马年新春特别版</title>
+    <title>DanFeng 公益代理 - 马年新春紫韵版</title>
     <style>
-        /* 全局样式：重置默认边距+居中+淡紫高级背景 */
+        /* 全局样式重置+基础配置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            /* 淡紫底色，低饱和度更高级 */
             background-color: #f9f7fd;
             font-family: "微软雅黑", "Inter", Arial, sans-serif;
+            color: #4a4a68;
+            letter-spacing: 0.5px;
+            padding: 20px;
+            max-width: 1200px; /* 电脑端最大宽度，避免内容过宽 */
+            margin: 0 auto; /* 页面居中 */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+        }
+
+        /* 通用版块样式：每个版块统一间距+内边距 */
+        .section {
+            width: 100%; /* 占满容器宽度，响应式核心 */
             padding: 20px;
-            color: #4a4a68; /* 深紫灰，保证文字可读性 */
-            letter-spacing: 0.5px; /* 轻微字间距，提升高级感 */
+            margin-bottom: 30px; /* 版块之间的间距 */
+            border-radius: 12px; /* 圆角更柔和 */
+            background-color: #ffffff; /* 白色底突出版块 */
+            box-shadow: 0 2px 12px rgba(123, 102, 216, 0.08); /* 轻微阴影，提升层次感 */
         }
-        /* 标题区样式：主紫调，更优雅 */
+
+        /* 1. 顶部标题版块 */
+        .header-section {
+            text-align: center;
+            border-bottom: 2px solid #f0edfc; /* 底部边框分隔版块 */
+        }
         .title {
-            font-size: 32px;
-            font-weight: 600; /* 适中加粗，不生硬 */
-            margin-bottom: 12px;
-            color: #7b66d8; /* 主紫色，高级不刺眼 */
-        }
-        /* 节日特别版标语：浅紫强调 */
-        .festival-tag {
-            font-size: 20px;
-            color: #9a86e4; /* 浅紫色，和主色呼应 */
-            margin-bottom: 24px;
-            font-weight: 500;
-        }
-        /* 核心标语区：提升字体质感 */
-        .slogan {
-            font-size: 24px;
-            margin: 18px 0;
-            text-align: center;
-            font-weight: 500;
-            color: #6b5acd; /* 中紫色，突出核心文案 */
-        }
-        /* 节日祝福语：淡紫灰，不抢戏 */
-        .blessing {
-            font-size: 18px;
-            color: #8c88a8; /* 淡紫灰，柔和高级 */
-            margin-bottom: 36px;
-            line-height: 1.6;
-        }
-        /* 数据统计区：横向排列，适配手机 */
-        .data-box {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px; /* 加大间距，更简约透气 */
-            margin-top: 48px;
-        }
-        /* 单个数据样式 */
-        .data-item {
-            text-align: center;
-        }
-        /* 数字样式：主紫调，放大醒目 */
-        .data-num {
-            font-size: 40px;
-            font-weight: 700;
-            color: #7b66d8; /* 主紫色，视觉焦点 */
+            font-size: clamp(24px, 5vw, 36px); /* 响应式字体：手机24px，电脑最大36px */
+            font-weight: 600;
+            color: #7b66d8;
             margin-bottom: 8px;
-            transition: transform 0.3s ease; /* 过渡效果更丝滑 */
         }
-        /* 数字hover动效：轻微放大，提升交互感 */
-        .data-num:hover {
-            transform: scale(1.08); /* 适度放大，不夸张 */
-            color: #6b5acd; /* hover加深，有层次感 */
-        }
-        /* 数字描述：淡紫灰，简约 */
-        .data-desc {
-            font-size: 16px;
-            color: #8c88a8;
-            text-transform: capitalize; /* 首字母大写，细节高级 */
-        }
-        /* 节点提示语：中紫色，层次分明 */
-        .node-tip {
-            font-size: 20px;
-            margin-top: 24px;
-            color: #6b5acd;
+        .festival-tag {
+            font-size: clamp(16px, 3vw, 20px);
+            color: #9a86e4;
             font-weight: 500;
+        }
+
+        /* 2. 核心标语版块 */
+        .slogan-section {
+            text-align: center;
+        }
+        .slogan {
+            font-size: clamp(18px, 4vw, 24px);
+            color: #6b5acd;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .blessing {
+            font-size: clamp(14px, 2.5vw, 18px);
+            color: #8c88a8;
             line-height: 1.8;
         }
-        /* 跟随系统深色模式：淡紫深色主题，保持高级感 */
+
+        /* 3. 数据展示版块 */
+        .data-section {
+            text-align: center;
+        }
+        .node-tip {
+            font-size: clamp(16px, 3vw, 20px);
+            color: #6b5acd;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        .data-box {
+            display: flex;
+            flex-wrap: wrap; /* 手机端自动换行 */
+            justify-content: center;
+            gap: clamp(20px, 5vw, 50px); /* 响应式间距 */
+        }
+        .data-item {
+            flex: 1; /* 电脑端均分宽度 */
+            min-width: 120px; /* 手机端最小宽度，避免挤压 */
+            padding: 15px;
+        }
+        .data-num {
+            font-size: clamp(28px, 6vw, 40px);
+            font-weight: 700;
+            color: #7b66d8;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+        .data-num:hover {
+            transform: scale(1.08);
+            color: #6b5acd;
+        }
+        .data-desc {
+            font-size: clamp(14px, 2vw, 16px);
+            color: #8c88a8;
+            text-transform: capitalize;
+        }
+
+        /* 4. 底部提示版块 */
+        .footer-section {
+            text-align: center;
+            border-top: 2px solid #f0edfc; /* 顶部边框分隔 */
+            color: #a199c0;
+            font-size: clamp(12px, 2vw, 14px);
+            padding-top: 20px;
+            margin-bottom: 0; /* 最后一个版块取消底部间距 */
+        }
+
+        /* 深色模式适配 */
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: #1a1726; /* 深紫黑，深色高级底 */
+                background-color: #1a1726;
                 color: #e2dff7;
             }
+            .section {
+                background-color: #252138;
+                box-shadow: 0 2px 12px rgba(167, 149, 247, 0.1);
+            }
+            .header-section {
+                border-bottom-color: #322b4b;
+            }
+            .footer-section {
+                border-top-color: #322b4b;
+                color: #c4c0d8;
+            }
             .title, .data-num {
-                color: #a795f7; /* 深色模式主紫 */
+                color: #a795f7;
             }
             .data-num:hover {
-                color: #c0b2ff; /* hover浅紫 */
+                color: #c0b2ff;
             }
             .festival-tag {
                 color: #b4a3f5;
             }
-            .slogan {
+            .slogan, .node-tip {
                 color: #9a86e4;
             }
             .blessing, .data-desc {
                 color: #c4c0d8;
             }
-            .node-tip {
-                color: #a795f7;
+        }
+
+        /* 小屏手机适配（可选，细化调整） */
+        @media (max-width: 480px) {
+            .section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            .data-item {
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 标题：可改自己的网站名称 -->
-    <div class="title">DanFeng 公益代理</div>
-    <!-- 节日标签：淡紫主题Emoji搭配 -->
-    <div class="festival-tag">💜 马年新春 · 紫韵版 💜</div>
-    <!-- 核心标语：适配淡紫主题 -->
-    <div class="slogan">马到成功 · 紫韵随行 网速飞驰</div>
-    <!-- 节日祝福：柔和文案 -->
-    <div class="blessing">🐎 紫启新程 · 龙马精神 · 万事顺遂 🐎</div>
-    <!-- 节点提示：淡紫主题 -->
-    <div class="node-tip">🚀 紫韵节点 · 全速就绪</div>
-    <div class="node-tip">火马年紫调高速节点已上线，伴你一骑绝尘。</div>
-    <!-- 数据统计区：核心数据 -->
-    <div class="data-box">
-        <div class="data-item">
-            <div class="data-num">26+</div>
-            <div class="data-desc">疾速节点</div>
+    <!-- 1. 顶部标题版块 -->
+    <div class="section header-section">
+        <div class="title">DanFeng 公益代理</div>
+        <div class="festival-tag">💜 马年新春 · 紫韵版 💜</div>
+    </div>
+
+    <!-- 2. 核心标语版块 -->
+    <div class="section slogan-section">
+        <div class="slogan">马到成功 · 紫韵随行 网速飞驰</div>
+        <div class="blessing">🐎 紫启新程 · 龙马精神 · 万事顺遂 🐎</div>
+    </div>
+
+    <!-- 3. 数据展示版块 -->
+    <div class="section data-section">
+        <div class="node-tip">🚀 紫韵节点 · 全速就绪</div>
+        <div class="node-tip">火马年紫调高速节点已上线，伴你一骑绝尘。</div>
+        <div class="data-box">
+            <div class="data-item">
+                <div class="data-num">26+</div>
+                <div class="data-desc">疾速节点</div>
+            </div>
+            <div class="data-item">
+                <div class="data-num">2.6K+</div>
+                <div class="data-desc">逐风骑士</div>
+            </div>
+            <div class="data-item">
+                <div class="data-num">99.9%</div>
+                <div class="data-desc">稳定在线</div>
+            </div>
         </div>
-        <div class="data-item">
-            <div class="data-num">2.6K+</div>
-            <div class="data-desc">逐风骑士</div>
-        </div>
-        <div class="data-item">
-            <div class="data-num">99.9%</div>
-            <div class="data-desc">稳定在线</div>
-        </div>
+    </div>
+
+    <!-- 4. 底部提示版块 -->
+    <div class="section footer-section">
+        © 2026 DanFeng 公益代理 · 紫韵版 | 轻量高效 · 稳定可靠
     </div>
 </body>
 </html>
