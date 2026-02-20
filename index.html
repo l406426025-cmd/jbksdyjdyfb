@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小姬永久免费订阅 - 极光版</title>
     <style>
-        /* 样式完全不变，原封不动 */
         * {
             margin: 0;
             padding: 0;
@@ -266,11 +265,9 @@
 
     <div class="section button-section">
         <div class="btn-grid">
-            <!-- 原有主按钮 -->
             <button class="action-btn primary-btn">
                 📋 复制节点链接
             </button>
-            <!-- 原有次要按钮 -->
             <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="action-btn secondary-btn">
                 📌 永不失联发布页
             </a>
@@ -280,7 +277,6 @@
             <a href="https://t.me/jbksjl" target="_blank" class="action-btn secondary-btn">
                 📢 加入社群交流
             </a>
-            <!-- 新增三个按钮：放在最后，风格一致 -->
             <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fdlrjxzjbks%2F" target="_blank" class="action-btn secondary-btn">
                 📲 代理软件下载合集
             </a>
@@ -291,6 +287,12 @@
                 🏠 小姬资源仓库
             </a>
         </div>
+
+        <!-- 新增的提示语，放在按钮区下方、复制次数上方 -->
+        <div style="text-align: center; margin: 16px 0; font-size: 0.95rem; color: #7c6ab8; line-height: 1.5; background: rgba(123,102,216,0.06); padding: 12px 20px; border-radius: 12px; border: 1px dashed #c4b8f0;">
+            ⚠️ 重要提示：订阅不支持导入 Clash 系列的代理软件
+        </div>
+
         <div class="copy-count">累计使用 <span class="count-num" id="copyCount">0</span> 次</div>
     </div>
 
@@ -322,25 +324,25 @@
 
     <script>
         const copyLink = "https://gist.githubusercontent.com/l406426025-cmd/bbbb3efb0bd1ed85a72b87f3bce95c49/raw/karing-nodes.txt";
-       
+      
         const copyBtn = document.querySelector('.primary-btn');
         const copyCountEl = document.getElementById('copyCount');
-       
+      
         let copyCount = localStorage.getItem('xiaojiCopyCount') || 0;
         copyCountEl.textContent = copyCount;
 
         copyBtn.addEventListener('click', async () => {
             try {
                 await navigator.clipboard.writeText(copyLink);
-               
+              
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = "✅ 复制成功";
                 copyBtn.style.backgroundColor = "#4CAF50";
-               
+              
                 copyCount++;
                 copyCountEl.textContent = copyCount;
                 localStorage.setItem('xiaojiCopyCount', copyCount);
-               
+              
                 setTimeout(() => {
                     copyBtn.innerHTML = originalText;
                     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -349,7 +351,7 @@
                         copyBtn.style.backgroundColor = "#7b66d8";
                     }
                 }, 2000);
-               
+              
             } catch (err) {
                 const tempInput = document.createElement('input');
                 tempInput.value = copyLink;
@@ -357,15 +359,15 @@
                 tempInput.select();
                 document.execCommand('copy');
                 document.body.removeChild(tempInput);
-               
+              
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = "✅ 复制成功";
                 copyBtn.style.backgroundColor = "#4CAF50";
-               
+              
                 copyCount++;
                 copyCountEl.textContent = copyCount;
                 localStorage.setItem('xiaojiCopyCount', copyCount);
-               
+              
                 setTimeout(() => {
                     copyBtn.innerHTML = originalText;
                     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
