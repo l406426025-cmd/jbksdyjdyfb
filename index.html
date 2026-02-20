@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小姬永久免费订阅 - 极光版</title>
     <style>
-        /* 全局样式重置+基础配置 */
+        /* 样式完全不变，原封不动 */
         * {
             margin: 0;
             padding: 0;
@@ -23,8 +23,6 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* 通用版块样式 */
         .section {
             width: 100%;
             padding: 24px;
@@ -34,8 +32,6 @@
             box-shadow: 0 4px 20px rgba(123, 102, 216, 0.06);
             border: 1px solid #f0edfc;
         }
-
-        /* 1. 顶部标题版块 */
         .header-section {
             text-align: center;
             padding: 30px 24px;
@@ -57,8 +53,6 @@
             border-radius: 30px;
             display: inline-block;
         }
-
-        /* 2. 核心标语版块 */
         .slogan-section {
             text-align: center;
             padding: 20px 24px;
@@ -78,20 +72,16 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
-        /* 3. 功能按钮版块 - 核心区 */
         .button-section {
             padding: 30px 24px;
             margin-bottom: 30px;
         }
-        /* 按钮容器：网格布局，更规整 */
         .btn-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 18px;
             margin-bottom: 25px;
         }
-        /* 通用按钮样式 */
         .action-btn {
             padding: 16px 24px;
             border: none;
@@ -99,14 +89,13 @@
             font-size: clamp(14px, 2vw, 16px);
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             text-decoration: none;
         }
-        /* 主按钮样式 */
         .primary-btn {
             background-color: #7b66d8;
             color: #ffffff;
@@ -116,7 +105,6 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(123, 102, 216, 0.25);
         }
-        /* 次要按钮样式 */
         .secondary-btn {
             background-color: #f0edfc;
             color: #7b66d8;
@@ -127,7 +115,6 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(123, 102, 216, 0.15);
         }
-        /* 复制次数展示 */
         .copy-count {
             font-size: clamp(14px, 2vw, 16px);
             color: #8c88a8;
@@ -141,8 +128,6 @@
             color: #7b66d8;
             font-weight: 700;
         }
-
-        /* 4. 数据展示版块 */
         .data-section {
             padding: 30px 24px;
             margin-bottom: 30px;
@@ -166,7 +151,7 @@
             padding: 25px 15px;
             background-color: #f9f7fd;
             border-radius: 12px;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
         }
         .data-item:hover {
             transform: translateY(-5px);
@@ -184,8 +169,6 @@
             color: #8c88a8;
             font-weight: 500;
         }
-
-        /* 5. 底部提示版块 */
         .footer-section {
             text-align: center;
             padding: 20px 24px;
@@ -196,8 +179,6 @@
             background-color: #ffffff;
             border-radius: 16px;
         }
-
-        /* 深色模式适配 */
         @media (prefers-color-scheme: dark) {
             body {
                 background: linear-gradient(135deg, #1a1726 0%, #252138 100%);
@@ -230,7 +211,6 @@
             .data-item {
                 background-color: #322b4b;
             }
-            /* 深色模式按钮样式 */
             .primary-btn {
                 background-color: #8d79e0;
             }
@@ -248,8 +228,6 @@
                 box-shadow: 0 8px 20px rgba(167, 149, 247, 0.15);
             }
         }
-
-        /* 响应式适配 */
         @media (max-width: 768px) {
             .section {
                 padding: 20px 16px;
@@ -268,7 +246,6 @@
                 padding: 20px 15px;
             }
         }
-
         @media (max-width: 480px) {
             body {
                 padding: 15px;
@@ -277,43 +254,46 @@
     </style>
 </head>
 <body>
-    <!-- 1. 顶部标题版块 -->
     <div class="section header-section">
         <div class="title">小姬永久免费订阅</div>
         <div class="version-tag">💜 极光版 · 极速稳定 💜</div>
     </div>
 
-    <!-- 2. 核心标语版块 -->
     <div class="section slogan-section">
         <div class="slogan">极光连接 · 无界体验</div>
         <div class="desc">✨ 永不失联 · 极致体验 · 最强备用 ✨</div>
     </div>
 
-    <!-- 3. 功能按钮版块 -->
     <div class="section button-section">
         <div class="btn-grid">
-            <!-- 复制节点链接 -->
+            <!-- 原有主按钮 -->
             <button class="action-btn primary-btn">
                 📋 复制节点链接
             </button>
-            <!-- 永不失联发布页 -->
+            <!-- 原有次要按钮 -->
             <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="action-btn secondary-btn">
                 📌 永不失联发布页
             </a>
-            <!-- iOS小火箭免费ID -->
             <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fxiaoji.github.io%2F" target="_blank" class="action-btn secondary-btn">
                 📱 iOS小火箭免费ID
             </a>
-            <!-- 加入群聊 -->
             <a href="https://t.me/jbksjl" target="_blank" class="action-btn secondary-btn">
                 📢 加入社群交流
             </a>
+            <!-- 新增三个按钮：放在最后，风格一致 -->
+            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fdlrjxzjbks%2F" target="_blank" class="action-btn secondary-btn">
+                📲 代理软件下载合集
+            </a>
+            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbskleddjjctja%2F" target="_blank" class="action-btn secondary-btn">
+                💎 低价魔法推荐
+            </a>
+            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2F" target="_blank" class="action-btn secondary-btn">
+                🏠 小姬资源仓库
+            </a>
         </div>
-        <!-- 复制次数展示 -->
         <div class="copy-count">累计使用 <span class="count-num" id="copyCount">0</span> 次</div>
     </div>
 
-    <!-- 4. 数据展示版块 -->
     <div class="section data-section">
         <div class="node-tip">🚀 极光节点 · 全域覆盖 · 毫秒级响应</div>
         <div class="data-grid">
@@ -336,71 +316,56 @@
         </div>
     </div>
 
-    <!-- 5. 底部提示版块 -->
     <div class="footer-section">
         © 2026 小姬永久免费订阅 · 极光版 | 轻量高效 · 稳定可靠 · 隐私保护
     </div>
 
-    <!-- JavaScript 功能实现：复制链接 + 统计次数 -->
     <script>
-        // 1. 定义要复制的链接
         const copyLink = "https://gist.githubusercontent.com/l406426025-cmd/bbbb3efb0bd1ed85a72b87f3bce95c49/raw/karing-nodes.txt";
-        
-        // 2. 获取DOM元素
+       
         const copyBtn = document.querySelector('.primary-btn');
         const copyCountEl = document.getElementById('copyCount');
-        
-        // 3. 从本地存储读取复制次数（刷新页面不丢失）
+       
         let copyCount = localStorage.getItem('xiaojiCopyCount') || 0;
         copyCountEl.textContent = copyCount;
 
-        // 4. 复制功能实现
         copyBtn.addEventListener('click', async () => {
             try {
-                // 复制链接到剪贴板
                 await navigator.clipboard.writeText(copyLink);
-                
-                // 提示复制成功（按钮文字临时变化）
+               
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = "✅ 复制成功";
                 copyBtn.style.backgroundColor = "#4CAF50";
-                
-                // 更新复制次数并保存到本地存储
+               
                 copyCount++;
                 copyCountEl.textContent = copyCount;
                 localStorage.setItem('xiaojiCopyCount', copyCount);
-                
-                // 2秒后恢复按钮原始状态
+               
                 setTimeout(() => {
                     copyBtn.innerHTML = originalText;
-                    // 恢复原配色（区分深色/浅色模式）
                     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                         copyBtn.style.backgroundColor = "#8d79e0";
                     } else {
                         copyBtn.style.backgroundColor = "#7b66d8";
                     }
                 }, 2000);
-                
+               
             } catch (err) {
-                // 复制失败的备用方案（创建临时输入框复制）
                 const tempInput = document.createElement('input');
                 tempInput.value = copyLink;
                 document.body.appendChild(tempInput);
                 tempInput.select();
                 document.execCommand('copy');
                 document.body.removeChild(tempInput);
-                
-                // 提示复制成功
+               
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = "✅ 复制成功";
                 copyBtn.style.backgroundColor = "#4CAF50";
-                
-                // 更新次数
+               
                 copyCount++;
                 copyCountEl.textContent = copyCount;
                 localStorage.setItem('xiaojiCopyCount', copyCount);
-                
-                // 恢复按钮状态
+               
                 setTimeout(() => {
                     copyBtn.innerHTML = originalText;
                     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
