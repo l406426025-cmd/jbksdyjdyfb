@@ -88,7 +88,7 @@
             font-size: clamp(14px, 2vw, 16px);
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -150,7 +150,7 @@
             padding: 25px 15px;
             background-color: #f9f7fd;
             border-radius: 12px;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
         }
         .data-item:hover {
             transform: translateY(-5px);
@@ -250,99 +250,209 @@
                 padding: 15px;
             }
         }
+
+        /* 新增弹窗样式 */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.75);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(6px);
+        }
+        .modal-content {
+            background: #ffffff;
+            border-radius: 16px;
+            max-width: 92%;
+            width: 620px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 28px 24px;
+            box-shadow: 0 10px 40px rgba(123,102,216,0.3);
+            border: 2px solid #e0d9f8;
+            color: #4a4a68;
+        }
+        .modal-content h2 {
+            color: #d32f2f;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .modal-content p {
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+        }
+        .modal-content .strong {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        .modal-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+        .modal-btn {
+            padding: 14px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 180px;
+        }
+        #agree {
+            background-color: #7b66d8;
+            color: white;
+        }
+        #agree:hover {
+            background-color: #6b5acd;
+            transform: translateY(-2px);
+        }
+        #disagree {
+            background-color: #ef5350;
+            color: white;
+        }
+        #disagree:hover {
+            background-color: #d32f2f;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) {
+            .modal-content { padding: 24px 18px; }
+            .modal-buttons { flex-direction: column; gap: 12px; }
+        }
     </style>
 </head>
 <body>
-    <div class="section header-section">
-        <div class="title">小姬永久免费订阅</div>
-        <div class="version-tag">💜 极光版 · 极速稳定 💜</div>
-    </div>
 
-    <div class="section slogan-section">
-        <div class="slogan">极光连接 · 无界体验</div>
-        <div class="desc">✨ 永不失联 · 极致体验 · 最强备用 ✨</div>
-    </div>
+    <!-- 免责弹窗（页面加载立即出现） -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <h2>重要免责声明（必须阅读）</h2>
+            <p>1. 本页面提供的订阅链接等内容均来源于互联网公开渠道，<strong>仅供个人学习、技术研究、测试交流之用，不构成任何服务提供或使用推荐</strong>。</p>
+            
+            <p>2. 本人<strong>不运营、不维护、不销售、不代理</strong>任何代理服务、节点或工具，<strong>未从中获取任何经济利益</strong>，也<strong>不参与任何形式的商业推广或盈利行为</strong>。</p>
+            
+            <p>3. 中华人民共和国法律法规明确禁止未经许可提供、传播或使用翻墙工具及国际联网代理服务（详见《网络安全法》《计算机信息网络国际联网管理暂行规定》等）。本人<strong>强烈反对、坚决不鼓励、不支持</strong>任何违反中国法律法规的行为。</p>
+            
+            <p>4. 订阅链接可能因网络环境、运营商、政策变化等原因随时失效或不可用。访问者必须自行判断内容的合法性、安全性及可用性，并<strong>严格遵守所在地全部法律法规</strong>。</p>
+            
+            <p>5. 任何因访问、使用、导入、测试本页面内容而产生的法律责任、行政处罚、经济损失、账号异常、设备安全问题或其他任何后果，<strong>全部由使用者本人自行承担，与本页面及维护者完全无关</strong>。</p>
+            
+            <p style="margin-top: 20px; text-align: center; font-weight: bold; color: #d32f2f; font-size: 1.15rem;">
+                点击“同意并继续”即表示您已完整阅读并理解以上全部内容，并承诺不会将本页面用于任何违法目的。
+            </p>
 
-    <div class="section button-section">
-        <div class="btn-grid">
-            <button class="action-btn primary-btn">
-                📋 复制小姬永久订阅链接
-            </button>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="action-btn secondary-btn">
-                📌 永不失联发布页
-            </a>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fxiaoji.github.io%2F" target="_blank" class="action-btn secondary-btn">
-                📱 iOS小火箭免费ID
-            </a>
-            <a href="https://t.me/jbksjl" target="_blank" class="action-btn secondary-btn">
-                📢 加入社群交流
-            </a>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fdlrjxzjbks%2F" target="_blank" class="action-btn secondary-btn">
-                📲 代理软件下载合集
-            </a>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbskleddjjctja%2F" target="_blank" class="action-btn secondary-btn">
-                💎 低价魔法推荐
-            </a>
-            <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2F" target="_blank" class="action-btn secondary-btn">
-                🏠 小姬资源仓库
-            </a>
-        </div>
-
-        <!-- 新增的提示语，放在按钮区下方、复制次数上方 -->
-        <div style="text-align: center; margin: 16px 0; font-size: 0.95rem; color: #7c6ab8; line-height: 1.5; background: rgba(123,102,216,0.06); padding: 12px 20px; border-radius: 12px; border: 1px dashed #c4b8f0;">
-            ⚠️ 重要提示：小姬免费订阅暂不支持导入Clash系列的代理软件
-        </div>
-
-        <div class="copy-count">累计使用 <span class="count-num" id="copyCount">0</span> 次</div>
-    </div>
-
-    <div class="section data-section">
-        <div class="node-tip">🚀 极光节点 · 全域覆盖 · 毫秒级响应</div>
-        <div class="data-grid">
-            <div class="data-item">
-                <div class="data-num">26+</div>
-                <div class="data-desc">全球极速节点</div>
-            </div>
-            <div class="data-item">
-                <div class="data-num">2.6K+</div>
-                <div class="data-desc">活跃用户</div>
-            </div>
-            <div class="data-item">
-                <div class="data-num">99.9%</div>
-                <div class="data-desc">稳定在线</div>
-            </div>
-            <div class="data-item">
-                <div class="data-num">免费</div>
-                <div class="data-desc">永久使用</div>
+            <div class="modal-buttons">
+                <button id="agree" class="modal-btn">同意并继续</button>
+                <button id="disagree" class="modal-btn">不同意，离开</button>
             </div>
         </div>
     </div>
 
-    <div class="footer-section">
-        © 2026 小姬永久免费订阅 · 极光版 | 轻量高效 · 稳定可靠 · 隐私保护
+    <!-- 原有页面内容（先隐藏） -->
+    <div id="mainContent" style="display:none;">
+        <div class="section header-section">
+            <div class="title">小姬永久免费订阅</div>
+            <div class="version-tag">💜 极光版 · 极速稳定 💜</div>
+        </div>
+        <div class="section slogan-section">
+            <div class="slogan">极光连接 · 无界体验</div>
+            <div class="desc">✨ 永不失联 · 极致体验 · 最强备用 ✨</div>
+        </div>
+        <div class="section button-section">
+            <div class="btn-grid">
+                <button class="action-btn primary-btn">
+                    📋 复制小姬永久订阅链接
+                </button>
+                <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbks-fabuye%2F" target="_blank" class="action-btn secondary-btn">
+                    📌 永不失联发布页
+                </a>
+                <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fxiaoji.github.io%2F" target="_blank" class="action-btn secondary-btn">
+                    📱 iOS小火箭免费ID
+                </a>
+                <a href="https://t.me/jbksjl" target="_blank" class="action-btn secondary-btn">
+                    📢 加入社群交流
+                </a>
+                <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fdlrjxzjbks%2F" target="_blank" class="action-btn secondary-btn">
+                    📲 代理软件下载合集
+                </a>
+                <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2Fjbskleddjjctja%2F" target="_blank" class="action-btn secondary-btn">
+                    💎 低价魔法推荐
+                </a>
+                <a href="https://proxy.edgeone.pp.ua/proxy?url=https%3A%2F%2Fl406426025-cmd.github.io%2F" target="_blank" class="action-btn secondary-btn">
+                    🏠 小姬资源仓库
+                </a>
+            </div>
+            <!-- 新增的提示语，放在按钮区下方、复制次数上方 -->
+            <div style="text-align: center; margin: 16px 0; font-size: 0.95rem; color: #7c6ab8; line-height: 1.5; background: rgba(123,102,216,0.06); padding: 12px 20px; border-radius: 12px; border: 1px dashed #c4b8f0;">
+                ⚠️ 重要提示：小姬免费订阅暂不支持导入Clash系列的代理软件
+            </div>
+            <div class="copy-count">累计使用 <span class="count-num" id="copyCount">0</span> 次</div>
+        </div>
+        <div class="section data-section">
+            <div class="node-tip">🚀 极光节点 · 全域覆盖 · 毫秒级响应</div>
+            <div class="data-grid">
+                <div class="data-item">
+                    <div class="data-num">26+</div>
+                    <div class="data-desc">全球极速节点</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-num">2.6K+</div>
+                    <div class="data-desc">活跃用户</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-num">99.9%</div>
+                    <div class="data-desc">稳定在线</div>
+                </div>
+                <div class="data-item">
+                    <div class="data-num">免费</div>
+                    <div class="data-desc">永久使用</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-section">
+            © 2026 小姬永久免费订阅 · 极光版 | 轻量高效 · 稳定可靠 · 隐私保护
+        </div>
     </div>
 
     <script>
+        // 弹窗交互逻辑
+        document.getElementById('agree').addEventListener('click', function() {
+            document.getElementById('disclaimerModal').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        });
+
+        document.getElementById('disagree').addEventListener('click', function() {
+            document.body.innerHTML = '<div style="text-align:center; margin-top:200px; color:#d32f2f; font-size:2.5rem; font-weight:bold;">已取消访问<br><br>请关闭此页面</div>';
+        });
+
+        // 原有复制功能脚本（完全不变）
         const copyLink = "https://gist.githubusercontent.com/l406426025-cmd/bbbb3efb0bd1ed85a72b87f3bce95c49/raw/karing-nodes.txt";
-      
+     
         const copyBtn = document.querySelector('.primary-btn');
         const copyCountEl = document.getElementById('copyCount');
-      
+     
         let copyCount = localStorage.getItem('xiaojiCopyCount') || 0;
         copyCountEl.textContent = copyCount;
-
         copyBtn.addEventListener('click', async () => {
             try {
                 await navigator.clipboard.writeText(copyLink);
-              
+             
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = "✅ 复制成功";
                 copyBtn.style.backgroundColor = "#4CAF50";
-              
+             
                 copyCount++;
                 copyCountEl.textContent = copyCount;
                 localStorage.setItem('xiaojiCopyCount', copyCount);
-              
+             
                 setTimeout(() => {
                     copyBtn.innerHTML = originalText;
                     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -351,7 +461,7 @@
                         copyBtn.style.backgroundColor = "#7b66d8";
                     }
                 }, 2000);
-              
+             
             } catch (err) {
                 const tempInput = document.createElement('input');
                 tempInput.value = copyLink;
@@ -359,15 +469,15 @@
                 tempInput.select();
                 document.execCommand('copy');
                 document.body.removeChild(tempInput);
-              
+             
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = "✅ 复制成功";
                 copyBtn.style.backgroundColor = "#4CAF50";
-              
+             
                 copyCount++;
                 copyCountEl.textContent = copyCount;
                 localStorage.setItem('xiaojiCopyCount', copyCount);
-              
+             
                 setTimeout(() => {
                     copyBtn.innerHTML = originalText;
                     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
